@@ -86,7 +86,7 @@ namespace PRLoginRedes
             // rodar no terminal dotnet add package AspNet.Security.OAuth.GitHub
             // rodar dotnet restore
             // reiniciar o visual studio
-            #region Twitter
+            #region GitHub
             services.AddAuthentication().AddGitHub(githubOptions =>
             {
                 githubOptions.ClientId = Configuration["Authentication:GitHub:clientid"];
