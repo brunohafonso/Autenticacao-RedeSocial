@@ -2,6 +2,30 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v2.0": {
+      "AspNet.Security.OAuth.GitHub/2.0.0-rc2-final": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Authentication.OAuth": "2.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/AspNet.Security.OAuth.GitHub.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/AspNet.Security.OAuth.GitHub.dll": {}
+        }
+      },
+      "AspNet.Security.OAuth.LinkedIn/2.0.0-rc2-final": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Authentication.OAuth": "2.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/AspNet.Security.OAuth.LinkedIn.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/AspNet.Security.OAuth.LinkedIn.dll": {}
+        }
+      },
       "Libuv/1.10.0": {
         "type": "package",
         "dependencies": {
@@ -5033,6 +5057,28 @@
     }
   },
   "libraries": {
+    "AspNet.Security.OAuth.GitHub/2.0.0-rc2-final": {
+      "sha512": "UNG6xSwzfhceKbnCZ3iR0yAXcw760+3vSP5RdmT1uiVrl98r9aDP5zbIz3JuRYWq7VJVcSweC2azbjFvS+zsjQ==",
+      "type": "package",
+      "path": "aspnet.security.oauth.github/2.0.0-rc2-final",
+      "files": [
+        "aspnet.security.oauth.github.2.0.0-rc2-final.nupkg.sha512",
+        "aspnet.security.oauth.github.nuspec",
+        "lib/netstandard2.0/AspNet.Security.OAuth.GitHub.dll",
+        "lib/netstandard2.0/AspNet.Security.OAuth.GitHub.xml"
+      ]
+    },
+    "AspNet.Security.OAuth.LinkedIn/2.0.0-rc2-final": {
+      "sha512": "po9jAyDAIuMxxpL/xlt2hLN/mJDVutmhsW9Syy/39C9TVSPfyn5tMKdKH0OJQwrc6GeuMf5j6GAYYwYN8UGPdw==",
+      "type": "package",
+      "path": "aspnet.security.oauth.linkedin/2.0.0-rc2-final",
+      "files": [
+        "aspnet.security.oauth.linkedin.2.0.0-rc2-final.nupkg.sha512",
+        "aspnet.security.oauth.linkedin.nuspec",
+        "lib/netstandard2.0/AspNet.Security.OAuth.LinkedIn.dll",
+        "lib/netstandard2.0/AspNet.Security.OAuth.LinkedIn.xml"
+      ]
+    },
     "Libuv/1.10.0": {
       "sha512": "GsCf4q+eyaI49rCPlgYxdxa1SQCysXFFdSJWdstrwxytg4+VPYLYrXD4AT2rjHVJ+UF7SSWX9CapWEYaU4ejVQ==",
       "type": "package",
@@ -13109,6 +13155,8 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.0": [
+      "AspNet.Security.OAuth.GitHub >= 2.0.0-rc2-final",
+      "AspNet.Security.OAuth.LinkedIn >= 2.0.0-rc2-final",
       "Microsoft.AspNetCore.All >= 2.0.0",
       "Microsoft.EntityFrameworkCore.Tools >= 2.0.0",
       "Microsoft.NETCore.App >= 2.0.0",
@@ -13116,23 +13164,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\FIC\\.nuget\\packages\\": {},
+    "C:\\Users\\Suporte01\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\SENAI\\Autenticacao\\PRLoginRedes\\PRLoginRedes.csproj",
+      "projectUniqueName": "D:\\SENAI\\Autenticacao\\PRLoginRedes\\PRLoginRedes.csproj",
       "projectName": "PRLoginRedes",
-      "projectPath": "F:\\SENAI\\Autenticacao\\PRLoginRedes\\PRLoginRedes.csproj",
-      "packagesPath": "C:\\Users\\FIC\\.nuget\\packages\\",
-      "outputPath": "F:\\SENAI\\Autenticacao\\PRLoginRedes\\obj\\",
+      "projectPath": "D:\\SENAI\\Autenticacao\\PRLoginRedes\\PRLoginRedes.csproj",
+      "packagesPath": "C:\\Users\\Suporte01\\.nuget\\packages\\",
+      "outputPath": "D:\\SENAI\\Autenticacao\\PRLoginRedes\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\FIC\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Suporte01\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.0"
@@ -13158,6 +13206,14 @@
             "target": "Package",
             "version": "2.0.0",
             "autoReferenced": true
+          },
+          "AspNet.Security.OAuth.GitHub": {
+            "target": "Package",
+            "version": "2.0.0-rc2-final"
+          },
+          "AspNet.Security.OAuth.LinkedIn": {
+            "target": "Package",
+            "version": "2.0.0-rc2-final"
           },
           "Microsoft.AspNetCore.All": {
             "target": "Package",

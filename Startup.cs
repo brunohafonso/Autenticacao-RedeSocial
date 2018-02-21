@@ -12,6 +12,13 @@ using PRLoginRedes.Data;
 using PRLoginRedes.Models;
 using PRLoginRedes.Services;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Authentication;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication.OAuth;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using Newtonsoft.Json.Linq;
 
 namespace PRLoginRedes
 {
@@ -27,53 +34,80 @@ namespace PRLoginRedes
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-                services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<ApplicationDbContext>(options =>
+            options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
-                // services.AddDbContext<ApplicationDbContext>(options =>
-                // options.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
+            // services.AddDbContext<ApplicationDbContext>(options =>
+            // options.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
 
             //Chamando o serviço de Autenticação do Facebook
-                services.AddAuthentication().AddFacebook(facebookOptions =>{
-                    facebookOptions.AppId = Configuration["Authentication:Facebook:AppId"];//Authentication é a referencia para inserir o App Id e App Secret no .jason
-                    facebookOptions.AppSecret = Configuration["Authentication:Facebook:AppSecret"];
+            #region Facebook
+            services.AddAuthentication().AddFacebook(facebookOptions =>
+            {
+                facebookOptions.AppId = Configuration["Authentication:Facebook:AppId"];//Authentication é a referencia para inserir o App Id e App Secret no .jason
+                facebookOptions.AppSecret = Configuration["Authentication:Facebook:AppSecret"];
             });
+            #endregion
 
             //Chamando o serviço de Autenticação do Google
-            services.AddAuthentication().AddGoogle(googleOptions =>{
+            #region Google
+            services.AddAuthentication().AddGoogle(googleOptions =>
+            {
                 googleOptions.ClientId = Configuration["Authentication:Google:ClientId"];
                 googleOptions.ClientSecret = Configuration["Authentication:Google:ClientSecret"];
             });
-            
+            #endregion
+
             //Chamando o serviço de Autenticação da Microsoft
-            services.AddAuthentication().AddMicrosoftAccount(microsoftOptions =>{
+            #region Microsoft
+            services.AddAuthentication().AddMicrosoftAccount(microsoftOptions =>
+            {
                 microsoftOptions.ClientId = Configuration["Authentication:Microsoft:ApplicationId"];
                 microsoftOptions.ClientSecret = Configuration["Authentication:Microsoft:Password"];
             });
+            #endregion
 
             //Chamando o serviço de Autenticação do Twitter
-            services.AddAuthentication().AddTwitter(twitterOptions =>{
+            #region Twitter
+            services.AddAuthentication().AddTwitter(twitterOptions =>
+            {
                 twitterOptions.ConsumerKey = Configuration["Authentication:Twitter:ConsumerKey"];
                 twitterOptions.ConsumerSecret = Configuration["Authentication:Twitter:ConsumerSecret"];
             });
+            #endregion
+         
 
-            //Chamando o serviço de Autenticação do Twitter
-             services.AddAuthentication().AddOAuth("Github",githubOptions =>{
-                 githubOptions.ClientId = Configuration["Authentication:GitHub:ClientId"];
-                 githubOptions.ClientSecret = Configuration["Authentication:GitHub:ClientSecret"];
-                 githubOptions.CallbackPath = new PathString("/signin-github");
+            // Criar seu aplicativo em https://developer.github.com
+            // baixar o pacote AspNet.Security.OAuth.GitHub
+            // rodar no terminal dotnet add package AspNet.Security.OAuth.GitHub
+            // rodar dotnet restore
+            // reiniciar o visual studio
+            #region Twitter
+            services.AddAuthentication().AddGitHub(githubOptions =>
+            {
+                githubOptions.ClientId = Configuration["Authentication:GitHub:clientid"];
+                githubOptions.ClientSecret = Configuration["Authentication:GitHub:clientSecret"];
+            });
+            #endregion
 
-                githubOptions.AuthorizationEndpoint = "https://github.com/login/oauth/authorize";
-                githubOptions.TokenEndpoint = "https://github.com/login/oauth/access_token";
-                githubOptions.UserInformationEndpoint = "https://api.github.com/user";
-             });
-            
+            #region Linkedin
+            // Criar seu aplicativo em https://www.linkedin.com/developer/apps
+            // baixar o pacote AspNet.Security.OAuth.LinkedIn
+            // rodar no terminal dotnet add package AspNet.Security.OAuth.LinkedIn --version 2.0.0-rc2-final
+            //rodar dotnet restore
+            // reiniciar o visual studio
+            services.AddAuthentication().AddLinkedIn(options =>  
+            {  
+                options.ClientId = Configuration["Authentication:linkedin:Clientid"];  
+                options.ClientSecret = Configuration["Authentication:linkedin:ClientSecret"];  
+            }); 
+            #endregion
 
-          // Add application services.
+            // Add application services.
             services.AddTransient<IEmailSender, EmailSender>();
 
             services.AddMvc();

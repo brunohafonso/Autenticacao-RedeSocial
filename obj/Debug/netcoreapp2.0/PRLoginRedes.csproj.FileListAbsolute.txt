@@ -22,3 +22,15 @@ D:\SENAI\Autenticacao\PRLoginRedes\bin\Debug\netcoreapp2.0\PRLoginRedes.runtimec
 D:\SENAI\Autenticacao\PRLoginRedes\bin\Debug\netcoreapp2.0\PRLoginRedes.runtimeconfig.dev.json
 D:\SENAI\Autenticacao\PRLoginRedes\bin\Debug\netcoreapp2.0\PRLoginRedes.dll
 D:\SENAI\Autenticacao\PRLoginRedes\bin\Debug\netcoreapp2.0\PRLoginRedes.pdb
+E:\SENAI\Autenticacao\PRLoginRedes\bin\Debug\netcoreapp2.0\app.db
+E:\SENAI\Autenticacao\PRLoginRedes\bin\Debug\netcoreapp2.0\PRLoginRedes.deps.json
+E:\SENAI\Autenticacao\PRLoginRedes\bin\Debug\netcoreapp2.0\PRLoginRedes.runtimeconfig.json
+E:\SENAI\Autenticacao\PRLoginRedes\bin\Debug\netcoreapp2.0\PRLoginRedes.runtimeconfig.dev.json
+E:\SENAI\Autenticacao\PRLoginRedes\bin\Debug\netcoreapp2.0\PRLoginRedes.dll
+E:\SENAI\Autenticacao\PRLoginRedes\bin\Debug\netcoreapp2.0\PRLoginRedes.pdb
+E:\SENAI\Autenticacao\PRLoginRedes\obj\Debug\netcoreapp2.0\PRLoginRedes.csproj.CoreCompileInputs.cache
+E:\SENAI\Autenticacao\PRLoginRedes\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
+E:\SENAI\Autenticacao\PRLoginRedes\obj\Debug\netcoreapp2.0\PRLoginRedes.AssemblyInfoInputs.cache
+E:\SENAI\Autenticacao\PRLoginRedes\obj\Debug\netcoreapp2.0\PRLoginRedes.AssemblyInfo.cs
+E:\SENAI\Autenticacao\PRLoginRedes\obj\Debug\netcoreapp2.0\PRLoginRedes.dll
+E:\SENAI\Autenticacao\PRLoginRedes\obj\Debug\netcoreapp2.0\PRLoginRedes.pdb
